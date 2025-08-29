@@ -1,0 +1,593 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(26, 18, 18, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #e8eaea;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* html, body {
+  height: 100%;
+  margin: 0;
+} */
+body {
+  font-family: Arial, sans-serif;
+  background: #a3f3e7;
+  margin: 0;
+  height: 100%;;
+}
+
+nav {
+  background: #2c3e50;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input,
+textarea,
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
+button {
+  background:#299183 ;
+  color: rgb(227, 236, 236);
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #37cdff;
+}
+
+/* Job Cards */
+.job-grid {
+  display: grid;
+   grid-template-columns: repeat(5, 1fr); /* خمس أعمدة */
+  gap: 20px;
+  max-width: 1400px;         /* يحدد أقصى عرض للصف */
+  width: 100%;
+  padding: 0 20px;           /* مسافة من اليمين واليسار */
+  box-sizing: border-box;
+  
+  
+}
+
+.job-card {
+  
+background: #8fc0b9(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+}
+.job-card h3 { margin: 0 0 8px; font-size: 16px; color: #175d4f; }
+.job-card p { margin: 0 0 6px; color: #333; }
+.job-card button {
+  margin-top: auto;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #2caa99;
+  color: rgb(230, 243, 240);
+  cursor: pointer;
+  border-bottom: 2px solid #3498db;
+
+}
+
+
+
+.nav-link {
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* يجعل الصفحة كلها فل سكرين */
+.login-container {
+  display: flex;
+  justify-content: center; /* أفقياً */
+  align-items: center;     /* عمودياً */
+  height: 100vh;           /* يملأ الشاشة */
+  background: #57f6d9;     /* لون خلفية خفيف */
+}
+
+/* الصندوق تبع الفورم */
+.login-box {
+  background: rgb(33, 132, 123);
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(165, 187, 80, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 1rem;
+}
+
+.login-box input {
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-box button {
+  padding: 0.7rem;
+  background: #25f4af;
+  color: rgb(241, 241, 237);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #73d6fa;
+}
+.container {
+  height: 100vh;                /* ارتفاع الشاشة بالكامل */
+  display: flex;
+  justify-content: center;      /* أفقي */
+  align-items: center;          /* عمودي */
+  background: #30776d;
+
+}
+
+.header-left {
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 60px;
+}
+/* الصفحة العامة */
+.login-page{
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #a6e3d6;
+  overflow: hidden;
+}
+
+/* الخلفية الشفافة (watermark) */
+bg-watermark{
+  position: absolute;
+  inset: 0;
+  background: url("/logo.jpg") no-repeat center;
+  background-size: 40vw auto;   /* كبر/صغّر الخلفية */
+  opacity: 0.15;                 /* الشفافية */
+  pointer-events: none;          /* ما تعيق الكليك */
+  z-index: 1;
+}
+
+/* اللوجو الصغير في الزاوية */
+.brand{
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+}
+.brand img{
+  width: 100xp;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 30px; /* اختياري */
+}
+
+/* صندوق اللوجين أكبر بالعَرْض */
+.login-container{
+  width: 440px;          /* زوّد العرض هنا */
+  margin-left: 32px;     /* حافظه يسار */
+  z-index: 2; 
+  margin-left: 50vw;        /* فوق الخلفية */
+}
+
+.login-box{
+  background: #1d625b;
+  padding: 32px 28px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+.login-box input,
+.login-box button{
+  width: 100%;
+  margin: 12px 0;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* تجاوب للموبايل */
+@media (max-width: 600px){
+  .login-container{ width: 90%; margin: 0 auto; }
+  .bg-watermark{ background-size: 90vw auto; opacity: .12; }
+}
+
+.apply-form{ 
+  
+  padding: 2rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(165, 187, 80, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;}
+
+  .apply-container {
+  display: flex;
+  justify-content: center; /* أفقياً */
+  align-items: center;     /* عمودياً */
+  height: 100vh;           /* يملأ الشاشة */
+  background: #57f6d9;     /* لون خلفية خفيف */
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* html, body, #root { height: 100%; margin: 0; } */
+/* body { position: relative; overflow-x: hidden; } */
+
+.bg-watermark {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: url("/logo.jpg") no-repeat center center / contain;
+  opacity: 0.2;      /* شفافية */
+  z-index: 0;       /* يخليها خلف المحتوى */
+  pointer-events: none;
+}
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  position: relative;
+  
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(14, 167, 139, 0.6);
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+.navbar .logo {
+  height: 100px;
+}
+
+.navbar nav a {
+  margin-left: 16px;
+  color: white;
+  text-decoration: none;
+}
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+.job-board-title {
+  font-family: 'Roboto Slab', serif; /* خط رسمي */
+  font-size: 2.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #2c3e50; /* لون رسمي (رمادي غامق مائل للأزرق) */
+  border-bottom: 3px solid #3498db; /* خط سفلي أنيق */
+  display: inline-block;
+  padding-bottom: 10px;
+  margin: 20px auto;
+  letter-spacing: 1px;
+}
+.user-card {
+  background: #2c3e50;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 400px;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-card h2 {
+  font-size: 1.2rem;
+  color: #e9eef1;
+  margin-bottom: 20px;
+}
+
+.user-card p {
+  margin: 10px 0;
+  color: #ebeff1;
+  font-size: 1rem;
+}
+.top-menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 10px 15px;
+  background: #2c3e50;
+  border-bottom: 3px solid #3498db;
+}
+
+.top-menu a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ecf0f1;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.top-menu a:hover {
+  border-bottom: 2px solid #3498db;
+  color: #3498db;
+}
+/* Main content */
+.main {
+  flex: 1;
+  padding: 0px;
+  color: white; /* for visibility */
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 14px;
+  background: rgba(14, 167, 139, 0.6);
+  color: white;
+  z-index: 1;
+}
+
+
+
+
+/* يوسّط الحاوية بين الهيدر والفوتر */
+.center-page{
+  min-height: calc(100vh - var(--header-h) - var(--footer-h));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* “مودال” ثابت بالنص */
+.modal-card{
+  width: clamp(320px, 60vw, 720px);
+  max-height: 80vh;
+  background: #208e78;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  padding: 24px;
+  overflow: auto;
+  text-align: left;        /* مهم: لا نوسّط كل النص */
+}
+
+.modal-card h2{
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* شريط البحث */
+.search-row{
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto 16px;
+}
+.search-row input{
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #a7f8f2;
+  border-radius: 8px;
+  outline: none;
+}
+.search-row input:focus{
+  border-color: #8ab4ff;
+  box-shadow: 0 0 0 3px rgba(138,180,255,.25);
+}
+.search-row button{
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* شبكة النتائج */
+.results{
+  display: grid;
+  grid-template-columns: 1fr;  /* عمود واحد داخل الكارد */
+  gap: 12px;
+}
+
+/* بطاقة وظيفة */
+.job-item{
+  padding: 12px 14px;
+  border: 1px solid #f8f1f1;
+  border-radius: 10px;
+  background: #033d3d;
+}
+.job-title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.job-meta{
+  color: #0baddf;
+  font-size: 13px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.job-salary{
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.job-actions{ display: flex; gap: 8px; }
+
+.btn-outline{
+  padding: 8px 12px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* حالة لا توجد نتائج */
+.empty{
+  text-align: center;
+  color: #777;
+  padding: 16px 0;
+}
+
+.applicants-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #1e3d3f;
+  color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.applicants-table th,
+.applicants-table td {
+  padding: 10px 14px;
+  border: 1px solid #2e5a5c;
+  text-align: left;
+}
+
+.applicants-table th {
+  background: #2a4c4e;
+  font-weight: bold;
+}
+
+.applicants-table tr:nth-child(even) {
+  background: #244345;
+}
+
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.modal-content {
+  background: #9befc8;
+  color: #000;
+  width: min(640px, 100%);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.modal-buttons {
+  display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;
+}
+.modal-buttons button {
+  padding: 9px 16px; border: none; border-radius: 8px; cursor: pointer;
+}
+.modal-buttons button:first-child { background: #03675e; }
+.modal-buttons button:last-child  { background: #03675e; color: #fff; }
+
+.modal-buttons button:hover {
+  background: #73d6fa;
+}
