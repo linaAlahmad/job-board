@@ -20,7 +20,7 @@ export default function Login() {
       });
 
       let data = {};
-      try { data = await res.json(); } catch {}
+      try { data = await res.json(); } catch (err) {console.error("JSON parse error:", err)};
 
       const token = data.token || data.accessToken || data?.data?.token;
       const user = data.user;
